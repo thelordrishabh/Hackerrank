@@ -1,0 +1,36 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) throws IOException {
+        Scanner scanner = new Scanner(System.in);
+        String input = scanner.nextLine();
+        scanner.close();
+        if (input.matches("^[0-9 ]+$")) {
+            String[] tokens = input.split(" ");
+            Integer[] numbers = new Integer[tokens.length];
+            for (int i = 0; i < tokens.length; i++) {
+                numbers[i] = Integer.parseInt(tokens[i]);
+            }
+            System.out.println(sum(numbers));
+        } else {
+            String[] tokens = input.split(" ");
+            System.out.println(sum(tokens));
+        }
+    }
+    public static Integer sum(Integer[] ints) {
+        int total = 0;
+        for (Integer num : ints) {
+            total += num;
+        }
+        return total;
+    }
+    public static String sum(String[] strings) {
+        StringBuilder concatenated = new StringBuilder();
+        for (String str : strings) {
+            concatenated.append(str);
+        }
+        return concatenated.toString();
+    }
+}
